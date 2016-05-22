@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="96480199">
-    <data-source source="LOCAL" name="MySQL - iberian@localhost" uuid="b6c26b94-8c14-477c-bfe8-4a2d18f57844">
+  <component name="DataSourceManagerImpl" format="xml" hash="1665588137">
+    <data-source source="LOCAL" name="MySQL - iberian@localhost" uuid="afc50b83-6e2a-48b5-a1c0-841be3505593">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost/iberian</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/iberian</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

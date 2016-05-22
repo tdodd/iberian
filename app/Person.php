@@ -12,12 +12,17 @@ use Illuminate\Database\Eloquent\Model;
 class Person extends Model
 {
     /**
-     * The attributes that are mass assignable.
+     * Attributes that are mass assignable.
+     * @var array fillable
      */
     protected $fillable = [
         'fName', 'mName', 'lName', 'DoB', 'DoD', 'birthCity', 'birthCountry',
         'arrivalCity', 'arrivalCountry', 'arrivalDate', 'profession', 'notes'
     ];
-
+    /**
+     * Set whether or not the model will have 'createdAt' and 'updatedAt' timestamps.
+     * @var bool timestamps
+     */
     public $timestamps = false;
+
 }

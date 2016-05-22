@@ -5,3 +5,14 @@ body {
 .fa-btn {
     margin-right: 6px;
 }
+
+/* Navbar styles */
+
+.navbar-default {
+    height: 100px;
+    background-color: #1565C0;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand  {
+    color: white;
+}

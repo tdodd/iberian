@@ -14,7 +14,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin routes.
+// Login routes.
 Route::auth();
+
+// Dashboard access.
 Route::get('home', 'HomeController@index');
+
+// Search route.
 Route::get('search', 'SearchController@search');
+
+// Dashboard person entry.
+Route::post('home', 'HomeController@enterPerson');

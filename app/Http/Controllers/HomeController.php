@@ -34,16 +34,30 @@ class HomeController extends Controller
 
     /**
      * Enters a Person into the database.
+     *
+     * @param Request $request, the http request
+     * @return View, the dashboard view.
      */
     public function enterPerson(Request $request) {
 
         // Validate user input.
         $this->validate($request, [
-            'arrivalCity' => 'required',
-            'body' => 'required',
+            'fName' => 'alpha_dash|max:50', // Alpha-numeric characters, as well as dashes and underscores.
+            'mName' => 'alpha_dash|max:50',
+            'lName' => 'alpha_dash|max:50',
+            'DoB' => 'date', // Date format (yyyy-mm-dd)
+            'DoD' => 'date',
+            'birthCity' => 'alpha|max:100', // Letters only.
+            'birthCountry' => 'alpha|max:100',
+            'arrivalCity' => 'alpha|required|max:100',
+            'arrivalCountry' => 'alpha|required|max:100',
+            'arrivalDate' => 'date',
+            'profession' => 'alpha_num|max:100', // Letters and numbers only.
+            'notes' => 'max:2000',
         ]);
-        
-        Person::create([ // Create a person and add them to the DB.
+
+        // After validation, create a person and store them in the DB.
+        Person::create([
             'fName' => $request->fName,
             'mName' => $request->mName,
             'lName' => $request->lName,
@@ -58,6 +72,8 @@ class HomeController extends Controller
             'notes' => $request->notes
         ]);
 
-    }
+        return view('home'); // Redirect to dashboard.
 
-}
+    } // end enterPerson
+
+} // End HomeController
