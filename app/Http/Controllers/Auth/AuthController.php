@@ -25,6 +25,9 @@ class AuthController extends Controller {
 
     /**
      * Log a user in and redirect them to dashboard.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function login(Request $request) {
 

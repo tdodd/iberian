@@ -15,6 +15,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Person;
 use Illuminate\Http\Request;
+use Illuminate\Database\Schema\Blueprint;
 
 class HomeController extends Controller
 {
@@ -34,9 +35,9 @@ class HomeController extends Controller
 
     /**
      * Enters a Person into the database.
-     *
-     * @param Request $request, the http request
-     * @return View, the dashboard view.
+     * 
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function enterPerson(Request $request) {
 
@@ -47,13 +48,13 @@ class HomeController extends Controller
             'lName' => 'alpha_dash|max:50',
             'DoB' => 'date', // Date format (yyyy-mm-dd)
             'DoD' => 'date',
-            'birthCity' => 'alpha|max:100', // Letters only.
-            'birthCountry' => 'alpha|max:100',
-            'arrivalCity' => 'alpha|required|max:100',
-            'arrivalCountry' => 'alpha|required|max:100',
+            'birthCity' => 'string|max:100', // Content must be a string
+            'birthCountry' => 'string|required|exists:countries,name|max:100',
+            'arrivalCity' => 'string|required|max:100',
+            'arrivalCountry' => 'string|required|max:100',
             'arrivalDate' => 'date',
-            'profession' => 'alpha_num|max:100', // Letters and numbers only.
-            'notes' => 'max:2000',
+            'profession' => 'string|max:100',
+            'notes' => 'string|max:2000',
         ]);
 
         // After validation, create a person and store them in the DB.
@@ -72,8 +73,25 @@ class HomeController extends Controller
             'notes' => $request->notes
         ]);
 
-        return view('home'); // Redirect to dashboard.
+        // Redirect to dashboard with confirmation.
+        return redirect('home')->with('status', 'Person added!');
 
     } // end enterPerson
+
+    /**
+     * Browse people through the admin dashboard.
+     */
+    public function browse() {
+
+        $people = Person::all(); // Retrieve all rows from the table.
+        $columns = $people[0]->getTableColumns(); // Get column names.
+
+        // Redirect to browse view.
+        return view('browse', [
+            'people' => $people,
+            'columns' => $columns
+        ]);
+
+    } // end browse
 
 } // End HomeController

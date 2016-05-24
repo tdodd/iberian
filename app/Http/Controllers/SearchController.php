@@ -20,30 +20,31 @@ class SearchController extends Controller
     /**
      * Perform a search query.
      *
-     * @param Request $request, the http request passed to the controller.
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function search(Request $request) {
 
         $query = DB::table('people'); // Get queryBuilder instance for the table 'people'.
+        $empty = true; // Check if query is empty.
 
         // Loop through all the search criteria present in the query.
         foreach ($request->input() as $dbColumn => $value) {
 
-            if ($value !== '') // User has entered a value for this column.
+            if ($value !== '') { // User has entered a value for this column.
                 $query->where($dbColumn, 'LIKE', $value); // Add 'where' clauses for each of the search params.
-
+                $empty = false;
+            }
         } // end foreach
 
         $results = $query->get(); // Get results of the query.
 
-        if ($results[0] != '') { // If rows are found.
-            foreach ($results as $currentPerson) {
-                echo '<p>id: ' . $currentPerson->id . ', name: ' . $currentPerson->fName . '</p>';
-            }
-        } else { // No rows are found.
-            echo 'No results found.';
-        }
+        // Redirect to search results page.
+        return view('search',  [
+            'results' => $results,
+            'empty' => $empty
+        ]);
 
-    }
+    } // end search
 
 } // End SearchController

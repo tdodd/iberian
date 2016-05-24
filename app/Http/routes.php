@@ -10,18 +10,16 @@
 */
 
 // Homepage.
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
 
 // Login routes.
 Route::auth();
 
-// Dashboard access.
-Route::get('home', 'HomeController@index');
-
 // Search route.
 Route::get('search', 'SearchController@search');
 
-// Dashboard person entry.
+// Dashboard routes.
 Route::post('home', 'HomeController@enterPerson');
+Route::get('home', 'HomeController@index');
+Route::get('browse', 'HomeController@browse');
+
