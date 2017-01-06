@@ -1,0 +1,14 @@
+/*----- Date text inputs -----*/
+.date-range:focus { outline: none; }
+.date-range { 
+	width: 50px;
+	text-align: center;
+}
+
+.date-container { text-align: center; }
+
+.has-error {
+	color: #EF5350;
+	font-weight: bold;
+	outline: 2px solid;
+}

@@ -1,0 +1,23 @@
+.search-again { margin-top: 50px; }
+
+.panel { margin-top: 25px; }
+
+a h5 { color: #2196F3; }
+
+table { 
+	background: white;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.dategroup { display: none; }
+
+.date input {
+	width: 50px;
+	text-align: center;
+}
+
+.has-error {
+	color: #EF5350;
+	font-weight: bold;
+	outline: 2px solid;
+}

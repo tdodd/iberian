@@ -1,0 +1,8 @@
+============ Todo list ============
+
+# Change url
+
+============ Server Info ============
+rap-p48.rdc.uottawa.ca [216.48.92.93]
+user: tdodd - Equipe2015
+mysql: root - VP?T@5AzQt

@@ -1,0 +1,40 @@
+li#browse { background-color: #757575; /* Lightgray */ }
+
+td { word-wrap: break-word; }
+td a { color: #0D87E9; }
+
+th {font-size: 1.1em;}
+
+/* ----- Table cell padding ----- */
+.table>tbody>tr>td { padding: 10px; }
+
+table {
+	font-size: 1.1em;
+	background: white;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.site-header { padding-bottom: 0; }
+
+.search-row {
+	text-align: center;
+	margin: 25px 0;
+}
+
+/*----- Delete Button Styles -----*/
+.deleteForm input {
+	background: none;
+	border: none;
+	color: #0D87E9;
+}
+
+.btn-delete { margin-bottom: 0; }
+.btn-delete:hover { text-decoration: underline; }
+
+.search-hidden {
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}

@@ -1,0 +1,13 @@
+li#add { background-color: #757575; /* Lightgray */ }
+
+/*----- Date styles -----*/
+.date { display: none; }
+.date-label { font-size: 1.2em; }
+.dategroup { margin: 25px 0; }
+
+input[type="checkbox"] {
+	margin-left: 10px;
+}
+
+/* ----- Button styles ----- */
+.btn { color: white; }

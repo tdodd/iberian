@@ -1,0 +1,107 @@
+label {
+	position: absolute;
+	top: 0;
+	font-size: 1em;
+	margin-bottom: 10px;
+}
+
+/*----- Top left label -----*/
+.required-container { position: relative; }
+.top-left {
+	position: absolute;
+	top: -25px;
+	left: 0;
+	margin-bottom: 0;
+}
+
+/*----- Re-position labels for small screens -----*/
+@media (max-width: 993px) {
+	label { top: -15px; }
+}
+
+input.form-control { 
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+/*----- Notes textarea -----*/
+#notes-label { display: none; }
+#notes { margin-top: 10px; } /* Info-tab notes */
+
+textarea.form-control.notes:focus { box-shadow: inset 0px 0px 2px 2px #2196F3; }
+textarea.form-control.notes {
+	padding: 10px;
+	box-shadow: inset 0px 0px 2px 1px #DDD;
+}
+
+/*----- Delete button -----*/
+.deleteForm input {
+	background: none;
+	border: none;
+	color: #0D87E9;
+}
+
+.deleteForm input:focus { outline-width: 0; }
+
+.btn { color: white; }
+.save-btn { margin-top: 20px; }
+.btn-delete:hover { text-decoration: underline; }
+
+/*----- Tab Styles -----*/
+.nav-tabs { margin: 15px 0; }
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+    font-size: 16px;
+}
+
+.tab-content {
+	padding: 35px 20px 20px 20px;
+	background-color: #FFFFFF;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+	margin-bottom: 45px;
+}
+
+.relations-container { margin-top: 25px; }
+.sources-container { margin-top: 25px; }
+
+.table { font-size: 1.2em; }
+.table>tbody>tr>td { padding: 5px 0 0 10px; }
+
+/*----- Pencil icon -----*/
+.glyphicon-pencil:hover { 
+	cursor: pointer;
+	color: darkgrey;
+}
+
+.glyphicon-pencil {
+	font-size: 0.9em;
+	margin-left: 5px;
+}
+
+/* ----- Modal Dialog ----- */
+.modal-label {
+	display: inline;
+	font-size: 1.3em;
+	margin-right: 10px;
+}
+
+.modal-body input,
+.modal-body textarea {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/*----- Date styles -----*/
+.date-panel {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #F5F5F5;
+}
